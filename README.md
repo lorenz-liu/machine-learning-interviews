@@ -492,3 +492,7 @@ Choosing the appropriate kernel function depends on the characteristics of the d
 - **Sigmoid Kernel:**
   - Use when the data distribution is not well understood.
   - Adjust the $\alpha$ and $c$ parameters based on the characteristics of the data.
+
+### Loss Function - Hinge
+
+Support Vector Machines (SVMs) use a hinge loss function, which is specifically designed for classification tasks. The hinge loss is used to penalize misclassifications and encourage the model to maximize the margin between the decision boundary (hyperplane) and the support vectors. 
