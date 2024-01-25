@@ -268,7 +268,7 @@ $$ \text{Squared Hinge Loss}(y, f(x)) = \max(0, 1 - y \cdot f(x))^2 $$
 
 The choice of hinge loss or its variations depends on the specific requirements of the problem and the optimization approach used.
 
-## Loss Functions for Regression
+## Loss Functions for Regression (MAE, MSE)
 
 MAE (Mean Absolute Error) and MSE (Mean Squared Error) are both metrics used to measure the accuracy of a regression model's predictions by comparing the predicted values to the actual values. They are commonly used as loss functions during the training of regression models.
 
