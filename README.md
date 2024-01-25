@@ -274,12 +274,12 @@ MAE (Mean Absolute Error) and MSE (Mean Squared Error) are both metrics used to 
 
 1. **Mean Absolute Error (MAE):**
    - **Definition:** MAE is the average of the absolute differences between the predicted and actual values. It is defined as:
-     $$ \text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| $$
+     $$\text{MAE} = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|$$
    - **Interpretation:** MAE gives an average absolute measure of how far the predictions are from the actual values. It is less sensitive to outliers compared to MSE.
 
 2. **Mean Squared Error (MSE):**
    - **Definition:** MSE is the average of the squared differences between the predicted and actual values. It is defined as:
-     $$ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $$
+     $$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$$
    - **Interpretation:** MSE emphasizes larger errors due to the squared term. It is sensitive to outliers and penalizes them more compared to MAE.
 
 **Key Differences:**
