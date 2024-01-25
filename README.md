@@ -148,7 +148,7 @@ Here:
 
 **Characteristics of the ReLU Function:**
 
-1. **Non-Linearity:** While ReLU is a linear function for positive input values (\(x > 0\)), it introduces non-linearity to the network. This non-linearity is crucial for the ability of neural networks to learn complex patterns and representations.
+1. **Non-Linearity:** While ReLU is a linear function for positive input values (\(x > 0\)), it introduces non-linearity to the network because its output is a piecewise linear function. This non-linearity is crucial for the ability of neural networks to learn complex patterns and representations.
 
 2. **Simplicity:** ReLU is computationally efficient and easy to implement. The function simply outputs the input if it is positive and zero otherwise. This simplicity contributes to the popularity of ReLU in neural network architectures.
 
@@ -161,3 +161,51 @@ Here:
 While ReLU has many advantages, it is not without its drawbacks. The "dying ReLU" problem can occur when neurons become inactive (output zero) for all inputs during training. This can happen if the weights are updated in a way that consistently keeps the output of a neuron negative. To address this issue, variants of ReLU, such as Leaky ReLU and Parametric ReLU, have been introduced to allow a small gradient for negative input values, preventing neurons from becoming entirely inactive.
 
 In summary, ReLU is a widely used activation function in neural networks due to its simplicity, non-linearity, and efficiency in training deep networks. However, it is essential to be aware of potential issues like the dying ReLU problem and explore variants when necessary.
+
+### How to choose the appropriate activation function? 
+
+Choosing an activation function for a neural network depends on the specific characteristics of your data and the goals of your model. Here's a brief overview of the pros and cons of sigmoid, ReLU, and tanh, along with some guidance on how to choose:
+
+1. **Sigmoid Activation Function:**
+   - **Pros:**
+     - Suitable for the output layer in binary classification tasks, providing probabilities between 0 and 1.
+     - Smooth gradient facilitates optimization during training.
+   - **Cons:**
+     - Prone to vanishing gradient problem, limiting its effectiveness in deep networks.
+     - Outputs are not zero-centered, which might hinder optimization.
+   - **When to use:**
+     - For the output layer in binary classification.
+     - When interpretability of the output as probabilities is crucial.
+
+2. **ReLU (Rectified Linear Unit) Activation Function:**
+   - **Pros:**
+     - Non-linear, enabling the modeling of complex relationships.
+     - Efficient computation and mitigates the vanishing gradient problem for positive inputs.
+   - **Cons:**
+     - Prone to the "dying ReLU" problem, where neurons become inactive for certain inputs.
+     - Not suitable for outputs requiring a range outside of (0, +∞).
+   - **When to use:**
+     - Hidden layers in feedforward neural networks.
+     - When computational efficiency and simplicity are important.
+
+3. **tanh (Hyperbolic Tangent) Activation Function:**
+   - **Pros:**
+     - Outputs are zero-centered, helping mitigate the vanishing gradient problem.
+     - Suitable for the output layer in regression tasks.
+   - **Cons:**
+     - Still susceptible to vanishing gradient, though less than sigmoid.
+     - Not as computationally efficient as ReLU.
+   - **When to use:**
+     - Hidden layers in networks where zero-centered outputs are beneficial.
+     - For regression tasks.
+
+**How to Choose:**
+- **ReLU is a default choice:** ReLU is often a good default choice for hidden layers due to its simplicity, non-linearity, and computational efficiency. However, be aware of the "dying ReLU" problem and consider variants like Leaky ReLU or Parametric ReLU if needed.
+
+- **Sigmoid for binary classification outputs:** If you have a binary classification problem, using the sigmoid activation function in the output layer is appropriate.
+
+- **tanh for zero-centered outputs:** If you need zero-centered outputs, especially in the hidden layers, tanh is a good choice. It's often used in recurrent neural networks (RNNs) and LSTMs.
+
+- **Consider advanced activations:** Depending on your specific needs, you might also explore advanced activation functions like Swish, GELU, or others, which have been proposed to address certain limitations of traditional activations.
+
+- **Experiment and validate:** Ultimately, the best choice may depend on empirical testing on your specific dataset and problem. Experiment with different activation functions and architectures to find the one that works best for your particular scenario.
