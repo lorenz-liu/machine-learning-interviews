@@ -796,7 +796,6 @@ By employing a combination of these techniques and carefully monitoring the mode
 1. **Training Loss**: Monitor the training loss during the training process. If the loss remains high and doesn't decrease significantly, it's an indication that the model is struggling to fit the training data.
 2. **Validation Loss**: Use a separate validation dataset or a validation split of your training data. If the validation loss is high and doesn't improve along with the training loss, it suggests underfitting.
 3. **Performance Metrics**: Evaluate performance metrics (e.g., accuracy, F1 score) on both the training and validation datasets. If the metrics are consistently low, it's a sign of underfitting.
-4. **Visualization**: Visualize the model's predictions and compare them to the actual data. If the model's predictions don't align with the data's distribution, it indicates underfitting.
 
 ### Preventing Underfitting
 
